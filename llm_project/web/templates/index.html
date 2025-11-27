@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Slack 메시지 검색 시스템</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/main.js"></script>
+</head>
+<body>
+  <div class="flex flex-col justify-start pt-16 px-4 min-h-screen">
+    <h1 class="text-2xl font-bold mb-6 text-gray-800 text-center">
+      🔍 자연어 Slack 메시지 검색
+    </h1>
+  
+    <form action="/search" method="post" class="mb-10 w-full max-w-xl flex flex-col sm:flex-row gap-2">
+      <input
+        type="text"
+        name="query"
+        placeholder="예: 정지성이 언급한 gemini 메시지"
+        required
+        class="border rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+      <button
+        type="submit"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full sm:w-auto"
+      >
+        검색
+      </button>
+    </form>
+  
+    {% if query %}
+      <h2>📄 검색어: "{{ query }}"</h2>
+      <div class="meta">레이아웃: {{ layout_type }} | 검색방식: {{ search_type }}</div>
+      <hr>
+      <div class="results">
+        {{ results_html | safe }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

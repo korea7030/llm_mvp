@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    margin: 2rem;
+}
+input[type=text] {
+    padding: 0.5rem;
+    width: 400px;
+}
+button {
+    padding: 0.5rem;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+}
+.accordion-btn {
+    background-color: #eee;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    transition: background 0.3s;
+}
+/* style.css에서 이 부분은 삭제하거나 무시 */
+.accordion-content {
+    /* display: none;  <-- 삭제 또는 주석 */
+}
+.accordion-btn.active + .accordion-content {
+    display: block; /* <-- 삭제 */
+}
+mark {
+    background-color: yellow;
+}
+
+.accordion-item {
+    border: 1px solid #ccc;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  .accordion-header {
+    background-color: #f3f3f3;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+  }
+  
+  .accordion-body {
+    display: none;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+  }

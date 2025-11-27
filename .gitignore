@@ -1,0 +1,6 @@
+.env
+__pycache__/
+chroma_store/*
+slack_messages_with_profiles.json
+test.ipynb
+test.py
